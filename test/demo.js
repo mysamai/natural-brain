@@ -1,9 +1,4 @@
-# natural-brain
-
-A classifier for Node Natural that uses a BrainJS neural network for classification:
-
-```js
-var BrainJSClassifier = require('natural-brain');
+var BrainJSClassifier = require('../lib');
 var classifier = new BrainJSClassifier();
 
 classifier.addDocument('my unit-tests failed.', 'software');
@@ -20,4 +15,3 @@ console.log(classifier.classify('did you buy a new drive?'));
 console.log(classifier.classify('What is the capacity?'));
 console.log(classifier.classify('Lets meet tomorrow?'));
 console.log(classifier.classify('Can you play Skinny Puppy?'));
-```

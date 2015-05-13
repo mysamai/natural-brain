@@ -1,0 +1,28 @@
+{
+  "name": "natural-brain",
+  "version": "0.1.0",
+  "description": "A BrainJS neural network natural language classifier",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daffl/natural-brain.git"
+  },
+  "keywords": [
+    "nlp",
+    "ai",
+    "brainjs"
+  ],
+  "author": "David Luecke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daffl/natural-brain/issues"
+  },
+  "homepage": "https://github.com/daffl/natural-brain",
+  "dependencies": {
+    "brain": "^0.7.0",
+    "natural": "^0.2.1"
+  }
+}
