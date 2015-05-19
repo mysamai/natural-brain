@@ -4,7 +4,13 @@
   "description": "A BrainJS neural network natural language classifier",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish": "git push origin --tags",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish",
+    "jshint": "jshint lib/. test/. --config",
+    "mocha": "mocha test/ --recursive",
+    "test": "npm run jshint && npm run mocha"
   },
   "repository": {
     "type": "git",
@@ -24,5 +30,10 @@
   "dependencies": {
     "brain": "^0.7.0",
     "natural": "^0.2.1"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "jshint": "^2.7.0",
+    "mocha": "^2.2.5"
   }
 }
