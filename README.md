@@ -1,5 +1,7 @@
 # natural-brain
 
+[![Build Status](https://travis-ci.org/daffl/natural-brain.png?branch=master)](https://travis-ci.org/daffl/natural-brain)
+
 A natural language classifier using [Node Natural](https://github.com/NaturalNode/natural) using a [BrainJS](https://github.com/harthur/brain) neural network:
 
 ```js
