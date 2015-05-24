@@ -4,6 +4,8 @@
 
 A natural language classifier using [Node Natural](https://github.com/NaturalNode/natural) using a [BrainJS](https://github.com/harthur/brain) neural network:
 
+Note: This classifier passes the same tests as the [Node Natural Bayes classifier](https://github.com/NaturalNode/natural/blob/a79254585f2e381378f788de5168f6a906e037e8/spec/bayes_classifier_spec.js).
+
 ```js
 var BrainJSClassifier = require('natural-brain');
 var classifier = new BrainJSClassifier();

@@ -85,7 +85,7 @@ describe('BrainJS classifier', function() {
       expect(classifier.classify('qux')).to.be('good');
     });
 
-    it.skip('should serialize and deserialize a working classifier', function() {
+    it('should serialize and deserialize a working classifier', function() {
       var classifier = new BrainJSClassifier();
       classifier.addDocument('i fixed the box', 'computing');
       classifier.addDocument('i write code', 'computing');
@@ -108,7 +108,7 @@ describe('BrainJS classifier', function() {
       expect(newClassifier.classify('kick butt')).to.be('sports');
     });
 
-    it.skip('should save and load a working classifier', function(done) {
+    it('should save and load a working classifier', function(done) {
       var classifier = new BrainJSClassifier();
       classifier.addDocument('i fixed the box', 'computing');
       classifier.addDocument('i write code', 'computing');
@@ -119,8 +119,8 @@ describe('BrainJS classifier', function() {
 
       classifier.train();
 
-      classifier.save('bayes_classifier.json', function() {
-        BrainJSClassifier.load('bayes_classifier.json', null,
+      classifier.save('test/brain_classifier.json', function() {
+        BrainJSClassifier.load('test/brain_classifier.json', null,
           function(err, newClassifier){
             newClassifier.addDocument('kick a ball', 'sports');
             newClassifier.addDocument('hit some balls', 'sports');
