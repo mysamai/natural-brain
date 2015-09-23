@@ -136,4 +136,23 @@ describe('BrainJS classifier', function() {
       });
     });
   });
+
+  describe('remove and restore stopwords', function() {
+    it('classifies all words', function() {
+      BrainJSClassifier.disableStopWords();
+
+      var classifier = new BrainJSClassifier();
+
+      classifier.addDocument('are you there', 'first');
+      classifier.addDocument('you there', 'second');
+      classifier.train();
+
+      expect(BrainJSClassifier.stopwords.words.length).to.be(0);
+      expect(classifier.classify('Hey you there')).to.be('second');
+      expect(classifier.classify('Hey are you there')).to.be('first');
+
+      BrainJSClassifier.enableStopWords();
+      expect(BrainJSClassifier.stopwords.words.length).not.to.be(0);
+    });
+  });
 });
