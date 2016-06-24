@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/daffl/natural-brain.git"
+    "url": "https://github.com/mysamai/natural-brain.git"
   },
   "keywords": [
     "nlp",
@@ -24,11 +24,11 @@
   "author": "David Luecke",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/daffl/natural-brain/issues"
+    "url": "https://github.com/mysamai/natural-brain/issues"
   },
-  "homepage": "https://github.com/daffl/natural-brain",
+  "homepage": "https://github.com/mysamai/natural-brain",
   "dependencies": {
-    "brain": "^0.7.0",
+    "brain.js": "^0.7.0",
     "natural": "^0.2.1"
   },
   "devDependencies": {
