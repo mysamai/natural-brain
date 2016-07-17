@@ -13,6 +13,8 @@ class BrainJSClassifier extends ClassifierBase {
 
 BrainJSClassifier.restore = function(data, stemmer) {
   var result = new BrainJSClassifier({}, stemmer);
+
+  result.classifier.brain.fromJSON(data.classifier.brain);
   result.docs = data.docs;
   result.features = data.features;
 

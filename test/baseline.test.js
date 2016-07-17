@@ -122,11 +122,13 @@ describe('BrainJS classifier', function() {
       classifier.save('test/brain_classifier.json', function() {
         BrainJSClassifier.load('test/brain_classifier.json', null,
           function(err, newClassifier){
+            expect(newClassifier.classify('The box is working')).to.be('computing');
+
             newClassifier.addDocument('kick a ball', 'sports');
             newClassifier.addDocument('hit some balls', 'sports');
             newClassifier.addDocument('kick and punch', 'sports');
 
-            newClassifier.train();
+            newClassifier.retrain();
 
             expect(newClassifier.classify('a bug in the code')).to.be('computing');
             expect(newClassifier.classify('read all the books')).to.be('literature');
