@@ -1,4 +1,5 @@
 import brain from 'brain.js';
+import max from 'lodash.maxby';
 
 export default class Classifier {
   constructor(options) {
@@ -7,8 +8,9 @@ export default class Classifier {
   }
 
   addExample(input, label) {
-    const output = { [label]: 1 };
-    this.data.push({ input, output });
+    this.data.push({
+      input, output: { [label]: 1 }
+    });
   }
 
   train() {
@@ -18,23 +20,14 @@ export default class Classifier {
   getClassifications(features) {
     const data = this.brain.run(features);
 
-    return Object.keys(data).map(label => {
-      return { label: label, value: data[label] };
-    });
+    return Object.keys(data)
+      .map(label => ({ label: label, value: data[label] }));
   }
 
   classify(features) {
     const classifications = this.getClassifications(features);
-    let max = 0;
-    let result = null;
+    const res = max(classifications, current => current.value);
 
-    classifications.forEach(function(current) {
-      if(current.value > max) {
-        result = current.label;
-        max = current.value;
-      }
-    });
-
-    return result;
+    return res ? res.label : null;
   }
 }
