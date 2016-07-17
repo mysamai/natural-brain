@@ -22,7 +22,7 @@ BrainJSClassifier.restore = function(data, stemmer) {
 };
 
 BrainJSClassifier.load = function(filename, stemmer, callback) {
-  ClassifierBase.load(filename, function(err, classifier) {
+  ClassifierBase.load(filename, (err, classifier) => {
     if (err) {
       callback(err);
     }
