@@ -1,10 +1,10 @@
-var expect = require('expect.js');
-var BrainJSClassifier = require('../lib');
+import expect from 'expect.js';
+import BrainJSClassifier from '../lib';
 
 describe('BrainJS classifier', function() {
   describe('classifier', function() {
     it('should classify with arrays', function() {
-      var classifier = new BrainJSClassifier();
+      const classifier = new BrainJSClassifier();
       classifier.addDocument(['fix', 'box'], 'computing');
       classifier.addDocument(['write', 'code'], 'computing');
       classifier.addDocument(['script', 'code'], 'computing');
@@ -19,7 +19,7 @@ describe('BrainJS classifier', function() {
     });
 
     it('should provide all classification scores', function() {
-      var classifier = new BrainJSClassifier();
+      const classifier = new BrainJSClassifier();
       classifier.addDocument(['fix', 'box'], 'computing');
       classifier.addDocument(['write', 'code'], 'computing');
       classifier.addDocument(['script', 'code'], 'computing');
@@ -34,7 +34,7 @@ describe('BrainJS classifier', function() {
     });
 
     it('should classify with strings', function() {
-      var classifier = new BrainJSClassifier();
+      const classifier = new BrainJSClassifier();
       classifier.addDocument('i fixed the box', 'computing');
       classifier.addDocument('i write code', 'computing');
       classifier.addDocument('nasty script code', 'computing');
@@ -49,9 +49,9 @@ describe('BrainJS classifier', function() {
     });
 
     it('should classify and re-classify after document-removal', function() {
-      var classifier = new BrainJSClassifier();
-      var classifications = {};
-      var arr, item;
+      const classifier = new BrainJSClassifier();
+      const classifications = {};
+      let arr, item;
 
       // Add some good/bad docs and train
       classifier.addDocument('foo bar baz', 'good');
@@ -70,7 +70,7 @@ describe('BrainJS classifier', function() {
       // ratio for each side is equal -- have to compare actual values in
       // the classifications, should be equal since qux is unclassified
       arr = classifier.getClassifications('zooby');
-      for (var i = 0, ii = arr.length; i < ii; i++) {
+      for (let i = 0, ii = arr.length; i < ii; i++) {
         item = arr[i];
         classifications[item.label] = item.value;
       }
@@ -86,7 +86,7 @@ describe('BrainJS classifier', function() {
     });
 
     it('should serialize and deserialize a working classifier', function() {
-      var classifier = new BrainJSClassifier();
+      const classifier = new BrainJSClassifier();
       classifier.addDocument('i fixed the box', 'computing');
       classifier.addDocument('i write code', 'computing');
       classifier.addDocument('nasty script code', 'computing');
@@ -94,8 +94,8 @@ describe('BrainJS classifier', function() {
       classifier.addDocument('read a book', 'literature');
       classifier.addDocument('study the books', 'literature');
 
-      var obj = JSON.stringify(classifier);
-      var newClassifier = BrainJSClassifier.restore(JSON.parse(obj));
+      const obj = JSON.stringify(classifier);
+      const newClassifier = BrainJSClassifier.restore(JSON.parse(obj));
 
       newClassifier.addDocument('kick a ball', 'sports');
       newClassifier.addDocument('hit some balls', 'sports');
@@ -109,7 +109,7 @@ describe('BrainJS classifier', function() {
     });
 
     it('should save and load a working classifier', function(done) {
-      var classifier = new BrainJSClassifier();
+      const classifier = new BrainJSClassifier();
       classifier.addDocument('i fixed the box', 'computing');
       classifier.addDocument('i write code', 'computing');
       classifier.addDocument('nasty script code', 'computing');
@@ -141,7 +141,7 @@ describe('BrainJS classifier', function() {
     it('classifies all words', function() {
       BrainJSClassifier.disableStopWords();
 
-      var classifier = new BrainJSClassifier();
+      const classifier = new BrainJSClassifier();
 
       classifier.addDocument('are you there', 'first');
       classifier.addDocument('you there', 'second');

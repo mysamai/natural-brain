@@ -1,5 +1,5 @@
 language: node_js
 node_js:
-  - "0.10"
-  - "node"
-  - "iojs"
+  - 'node'
+  - '0.12'
+  - 'iojs'
