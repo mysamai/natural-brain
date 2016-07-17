@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mysamai/natural-brain.png?branch=master)](https://travis-ci.org/mysamai/natural-brain)
 
-A natural language classifier for [Node Natural](https://github.com/NaturalNode/natural) using the [harthur-org/brain.js](https://github.com/harthur-org/brain.js) fork or [BrainJS](https://github.com/harthur/brain), a JavaScript neural network:
+A natural language classifier for [Node Natural](https://github.com/NaturalNode/natural) using the [harthur-org/brain.js](https://github.com/harthur-org/brain.js) fork of [BrainJS](https://github.com/harthur/brain), a JavaScript neural network:
 
 Note: This classifier passes the same tests as the [Node Natural Bayes classifier](https://github.com/NaturalNode/natural/blob/a79254585f2e381378f788de5168f6a906e037e8/spec/bayes_classifier_spec.js).
 
@@ -29,3 +29,9 @@ console.log(classifier.classify('What is the capacity?')); // -> hardware
 console.log(classifier.classify('Lets meet tomorrow?')); // -> meeting
 console.log(classifier.classify('Can you play some stuff?')); // -> music
 ```
+
+## License
+
+Copyright (c) 2016
+
+Licensed under the [MIT license](LICENSE).
