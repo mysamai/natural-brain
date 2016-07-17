@@ -12,9 +12,7 @@ export default class Classifier {
   }
 
   train() {
-    const result = this.brain.train(this.data);
-    this.events.emit('doneTraining', true);
-    return result;
+    return this.brain.train(this.data);
   }
 
   getClassifications(features) {
