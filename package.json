@@ -1,39 +1,58 @@
 {
   "name": "natural-brain",
-  "version": "0.2.1",
   "description": "A BrainJS neural network natural language classifier",
-  "main": "lib/index.js",
-  "scripts": {
-    "publish": "git push origin && git push origin --tags",
-    "release:patch": "npm version patch && npm publish",
-    "release:minor": "npm version minor && npm publish",
-    "release:major": "npm version major && npm publish",
-    "jshint": "jshint lib/. test/. --config",
-    "mocha": "mocha test/ --recursive",
-    "test": "npm run jshint && npm run mocha"
-  },
+  "version": "0.0.0",
+  "homepage": "https://github.com/mysamai/natural-brain",
+  "main": "lib/",
+  "keywords": [],
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mysamai/natural-brain.git"
+    "url": "git://github.com/mysamai/natural-brain.git"
   },
-  "keywords": [
-    "nlp",
-    "ai",
-    "brainjs"
-  ],
-  "author": "David Luecke",
-  "license": "MIT",
+  "author": {
+    "name": "David Luecke",
+    "email": "daff@neyeon.com",
+    "url": "https://feathersjs.com"
+  },
+  "contributors": [],
   "bugs": {
     "url": "https://github.com/mysamai/natural-brain/issues"
   },
-  "homepage": "https://github.com/mysamai/natural-brain",
+  "engines": {
+    "node": ">= 0.12.0"
+  },
+  "scripts": {
+    "prepublish": "npm run compile",
+    "publish": "git push origin && git push origin --tags && npm run changelog",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish",
+    "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -am \"Updating changelog\"",
+    "compile": "rimraf lib/ && babel -d lib/ src/",
+    "watch": "babel --watch -d lib/ src/",
+    "jshint": "jshint src/. test/. --config",
+    "mocha": "mocha --recursive test/ --compilers js:babel-core/register",
+    "test": "npm run compile && npm run jshint && npm run mocha",
+    "start": "npm run compile && node example/app"
+  },
+  "directories": {
+    "lib": "lib"
+  },
   "dependencies": {
     "brain.js": "^0.7.0",
-    "natural": "^0.2.1"
+    "debug": "^2.2.0",
+    "natural": "^0.4.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-es2015": "^6.9.0",
+    "chai": "^3.5.0",
     "expect.js": "^0.3.1",
-    "jshint": "^2.7.0",
-    "mocha": "^2.2.5"
+    "jshint": "^2.9.2",
+    "mocha": "^2.5.3",
+    "rimraf": "^2.5.3"
   }
 }
