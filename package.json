@@ -24,7 +24,7 @@
   },
   "scripts": {
     "prepublish": "npm run compile",
-    "publish": "git push origin && git push origin --tags && npm run changelog",
+    "publish": "git push origin --tags && npm run changelog && git push origin",
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
