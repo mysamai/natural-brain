@@ -1,5 +1,8 @@
 # Change Log
 
+## [v0.2.3](https://github.com/mysamai/natural-brain/tree/v0.2.3) (2016-07-17)
+[Full Changelog](https://github.com/mysamai/natural-brain/compare/v0.2.2...v0.2.3)
+
 ## [v0.2.2](https://github.com/mysamai/natural-brain/tree/v0.2.2) (2016-07-17)
 [Full Changelog](https://github.com/mysamai/natural-brain/compare/v0.2.1...v0.2.2)
 
