@@ -8,11 +8,12 @@ class BrainJSClassifier extends ClassifierBase {
   constructor(options, stemmer) {
     const b = new Classifier(options);
     super(b, stemmer);
+    this.options = options;
   }
 }
 
-BrainJSClassifier.restore = function(data, stemmer) {
-  var result = new BrainJSClassifier({}, stemmer);
+BrainJSClassifier.restore = function(data, options, stemmer) {
+  var result = new BrainJSClassifier(options?options:data.options, stemmer);
 
   result.classifier.brain.fromJSON(data.classifier.brain);
   result.docs = data.docs;
@@ -21,12 +22,12 @@ BrainJSClassifier.restore = function(data, stemmer) {
   return result;
 };
 
-BrainJSClassifier.load = function(filename, stemmer, callback) {
+BrainJSClassifier.load = function(filename, options, stemmer, callback) {
   ClassifierBase.load(filename, (err, classifier) => {
     if (err) {
       callback(err);
     }
-    callback(err, BrainJSClassifier.restore(classifier, stemmer));
+    callback(err, BrainJSClassifier.restore(classifier, options, stemmer));
   });
 };
 
