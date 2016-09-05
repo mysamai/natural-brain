@@ -26,8 +26,8 @@ export default class Classifier {
   }
 
   classify(features) {
-    if(this.options.top > 1){
-      return this.classifyTop(features, this.options.top)
+    if(this.options && this.options.top > 1){
+      return this.classifyTop(features, this.options.top);
     }
 
     const classifications = this.getClassifications(features);
