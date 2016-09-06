@@ -120,7 +120,7 @@ describe('BrainJS classifier', function() {
       classifier.train();
 
       classifier.save('test/brain_classifier.json', function() {
-        BrainJSClassifier.load('test/brain_classifier.json', null,
+        BrainJSClassifier.load('test/brain_classifier.json', null, null,
           function(err, newClassifier){
             expect(newClassifier.classify('The box is working')).to.be('computing');
 
