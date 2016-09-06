@@ -27,7 +27,9 @@ BrainJSClassifier.load = function(filename, options, stemmer, callback) {
     if (err) {
       callback(err);
     }
-    callback(err, BrainJSClassifier.restore(classifier, options, stemmer));
+    if(typeof callback === 'function'){
+      callback(err, BrainJSClassifier.restore(classifier, options, stemmer));
+    }
   });
 };
 
