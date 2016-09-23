@@ -26,29 +26,8 @@ export default class Classifier {
   }
 
   classify(features) {
-    if(this.options && this.options.top > 1){
-      return this.classifyTop(features, this.options.top);
-    }
-
     const classifications = this.getClassifications(features);
     const res = max(classifications, current => current.value);
     return res ? res.label : null;
-  }
-
-  classifyTop(features, top) {
-    const classifications = this.getClassifications(features);
-    let res = classifications.sort(function(a, b){
-      return b.value - a.value;
-    });
-
-    if(!res){
-      return null;
-    }
-
-    if(top < res.length){
-      res = res.splice(0, top);
-    }
-
-    return res;
   }
 }
