@@ -1,5 +1,7 @@
 # natural-brain
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mysamai/natural-brain.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/mysamai/natural-brain.png?branch=master)](https://travis-ci.org/mysamai/natural-brain)
 
 A natural language classifier for [Node Natural](https://github.com/NaturalNode/natural) using the [harthur-org/brain.js](https://github.com/harthur-org/brain.js) fork of [BrainJS](https://github.com/harthur/brain), a JavaScript neural network:
