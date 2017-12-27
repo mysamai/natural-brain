@@ -5,6 +5,7 @@ export default class Classifier {
   constructor(options) {
     this.brain = new brain.NeuralNetwork(options);
     this.data = [];
+    this.options = options;
   }
 
   addExample(input, label) {
@@ -13,21 +14,20 @@ export default class Classifier {
     });
   }
 
-  train() {
-    return this.brain.train(this.data);
+  train(options) {
+    return this.brain.train(this.data, options);
   }
 
   getClassifications(features) {
     const data = this.brain.run(features);
 
     return Object.keys(data)
-      .map(label => ({ label: label, value: data[label] }));
+        .map(label => ({ label: label, value: data[label] }));
   }
 
   classify(features) {
     const classifications = this.getClassifications(features);
     const res = max(classifications, current => current.value);
-
     return res ? res.label : null;
   }
 }
