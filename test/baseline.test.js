@@ -1,9 +1,10 @@
-import expect from 'expect.js';
-import BrainJSClassifier from '../lib';
+/* global describe it */
+const expect = require('expect.js');
+const BrainJSClassifier = require('../lib');
 
-describe('BrainJS classifier', function() {
-  describe('classifier', function() {
-    it('should classify with arrays', function() {
+describe('BrainJS classifier', function () {
+  describe('classifier', function () {
+    it('should classify with arrays', function () {
       const classifier = new BrainJSClassifier();
       classifier.addDocument(['fix', 'box'], 'computing');
       classifier.addDocument(['write', 'code'], 'computing');
@@ -18,7 +19,7 @@ describe('BrainJS classifier', function() {
       expect(classifier.classify(['read', 'thing'])).to.be('literature');
     });
 
-    it('should provide all classification scores', function() {
+    it('should provide all classification scores', function () {
       const classifier = new BrainJSClassifier();
       classifier.addDocument(['fix', 'box'], 'computing');
       classifier.addDocument(['write', 'code'], 'computing');
@@ -33,7 +34,7 @@ describe('BrainJS classifier', function() {
       expect(classifier.getClassifications('i write code')[1].label).to.be('literature');
     });
 
-    it('should classify with strings', function() {
+    it('should classify with strings', function () {
       const classifier = new BrainJSClassifier();
       classifier.addDocument('i fixed the box', 'computing');
       classifier.addDocument('i write code', 'computing');
@@ -48,7 +49,7 @@ describe('BrainJS classifier', function() {
       expect(classifier.classify('read all the books')).to.be('literature');
     });
 
-    it('should classify and re-classify after document-removal', function() {
+    it('should classify and re-classify after document-removal', function () {
       const classifier = new BrainJSClassifier();
       const classifications = {};
       let arr, item;
@@ -85,7 +86,7 @@ describe('BrainJS classifier', function() {
       expect(classifier.classify('qux')).to.be('good');
     });
 
-    it('should serialize and deserialize a working classifier', function() {
+    it('should serialize and deserialize a working classifier', function () {
       const classifier = new BrainJSClassifier();
       classifier.addDocument('i fixed the box', 'computing');
       classifier.addDocument('i write code', 'computing');
@@ -110,7 +111,7 @@ describe('BrainJS classifier', function() {
       expect(newClassifier.classify('kick butt')).to.be('sports');
     });
 
-    it('should save and load a working classifier', function(done) {
+    it('should save and load a working classifier', function (done) {
       const classifier = new BrainJSClassifier();
       classifier.addDocument('i fixed the box', 'computing');
       classifier.addDocument('i write code', 'computing');
@@ -121,9 +122,13 @@ describe('BrainJS classifier', function() {
 
       classifier.train();
 
-      classifier.save('test/brain_classifier.json', function() {
+      classifier.save('test/brain_classifier.json', function () {
         BrainJSClassifier.load('test/brain_classifier.json', null, null,
-          function(err, newClassifier){
+          function (err, newClassifier) {
+            if (err) {
+              return done(err);
+            }
+
             expect(newClassifier.classify('The box is working')).to.be('computing');
 
             newClassifier.addDocument('kick a ball', 'sports');
@@ -141,8 +146,8 @@ describe('BrainJS classifier', function() {
     });
   });
 
-  describe('remove and restore stopwords', function() {
-    it('classifies all words', function() {
+  describe('remove and restore stopwords', function () {
+    it('classifies all words', function () {
       BrainJSClassifier.disableStopWords();
 
       const classifier = new BrainJSClassifier();
