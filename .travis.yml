@@ -1,4 +1,2 @@
 language: node_js
-node_js:
-  - 'node'
-  - 4
+node_js: 'node'
