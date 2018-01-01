@@ -94,6 +94,8 @@ describe('BrainJS classifier', function() {
       classifier.addDocument('read a book', 'literature');
       classifier.addDocument('study the books', 'literature');
 
+      classifier.train();
+
       const obj = JSON.stringify(classifier);
       const newClassifier = BrainJSClassifier.restore(JSON.parse(obj));
 
@@ -101,7 +103,7 @@ describe('BrainJS classifier', function() {
       newClassifier.addDocument('hit some balls', 'sports');
       newClassifier.addDocument('kick and punch', 'sports');
 
-      newClassifier.train();
+      newClassifier.retrain();
 
       expect(newClassifier.classify('a bug in the code')).to.be('computing');
       expect(newClassifier.classify('read all the books')).to.be('literature');

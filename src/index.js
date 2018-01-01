@@ -19,6 +19,8 @@ BrainJSClassifier.restore = function(data, options, stemmer) {
   result.docs = data.docs;
   result.features = data.features;
 
+  result.train();
+  
   return result;
 };
 
