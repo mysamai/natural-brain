@@ -1,4 +1,5 @@
-import { expect } from 'chai';
+/* global describe it */
+const { expect } = require('chai');
 
 describe('natural-brain', () => {
   it('is CommonJS compatible', () => {

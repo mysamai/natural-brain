@@ -1,5 +1,5 @@
-var BrainJSClassifier = require('../lib/index');
-var classifier = new BrainJSClassifier();
+const BrainJSClassifier = require('../lib/index');
+const classifier = new BrainJSClassifier();
 
 classifier.addDocument('my unit-tests failed.', 'software');
 classifier.addDocument('tried the program, but it was buggy.', 'software');
