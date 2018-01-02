@@ -1,5 +1,25 @@
 # Change Log
 
+## [v0.3.0](https://github.com/mysamai/natural-brain/tree/v0.3.0) (2018-01-02)
+[Full Changelog](https://github.com/mysamai/natural-brain/compare/v0.2.3...v0.3.0)
+
+**Closed issues:**
+
+- How can I return the value of classification ? [\#30](https://github.com/mysamai/natural-brain/issues/30)
+- Restore isn't working expected [\#14](https://github.com/mysamai/natural-brain/issues/14)
+- Can you save/import a net after its been trained? [\#12](https://github.com/mysamai/natural-brain/issues/12)
+
+**Merged pull requests:**
+
+- Update to new plugin infrastructure and brain.js 1.0.0 [\#34](https://github.com/mysamai/natural-brain/pull/34) ([daffl](https://github.com/daffl))
+- Update mocha to the latest version 🚀 [\#29](https://github.com/mysamai/natural-brain/pull/29) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update dependencies to enable Greenkeeper 🌴 [\#28](https://github.com/mysamai/natural-brain/pull/28) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update dependencies and Node versions [\#27](https://github.com/mysamai/natural-brain/pull/27) ([daffl](https://github.com/daffl))
+- Update natural to version 0.5.0 🚀 [\#11](https://github.com/mysamai/natural-brain/pull/11) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- enhanced options handling [\#7](https://github.com/mysamai/natural-brain/pull/7) ([jamie-beck](https://github.com/jamie-beck))
+- Update mocha to version 3.0.1 🚀 [\#6](https://github.com/mysamai/natural-brain/pull/6) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Some minor cleanup [\#4](https://github.com/mysamai/natural-brain/pull/4) ([daffl](https://github.com/daffl))
+
 ## [v0.2.3](https://github.com/mysamai/natural-brain/tree/v0.2.3) (2016-07-17)
 [Full Changelog](https://github.com/mysamai/natural-brain/compare/v0.2.2...v0.2.3)
 
