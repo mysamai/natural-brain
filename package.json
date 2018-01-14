@@ -1,7 +1,7 @@
 {
   "name": "natural-brain",
   "description": "A BrainJS neural network natural language classifier",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/mysamai/natural-brain",
   "main": "lib/",
   "keywords": [],
