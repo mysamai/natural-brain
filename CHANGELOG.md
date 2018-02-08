@@ -1,5 +1,14 @@
 # Change Log
 
+## [v0.3.2](https://github.com/mysamai/natural-brain/tree/v0.3.2) (2018-02-08)
+[Full Changelog](https://github.com/mysamai/natural-brain/compare/v0.3.1...v0.3.2)
+
+**Merged pull requests:**
+
+- Revert Brain.js workaround [\#39](https://github.com/mysamai/natural-brain/pull/39) ([daffl](https://github.com/daffl))
+- Update mocha to the latest version 🚀 [\#38](https://github.com/mysamai/natural-brain/pull/38) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- Update semistandard to the latest version 🚀 [\#35](https://github.com/mysamai/natural-brain/pull/35) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
 ## [v0.3.1](https://github.com/mysamai/natural-brain/tree/v0.3.1) (2018-01-14)
 [Full Changelog](https://github.com/mysamai/natural-brain/compare/v0.3.0...v0.3.1)
 
