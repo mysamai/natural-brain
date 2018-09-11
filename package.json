@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "brain.js": "^1.0.4",
-    "debug": "^3.0.1",
+    "debug": "^4.0.0",
     "lodash.maxby": "^4.4.0",
     "natural": "^0.5.0"
   },
