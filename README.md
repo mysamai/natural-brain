@@ -32,6 +32,26 @@ console.log(classifier.classify('Lets meet tomorrow?')); // -> meeting
 console.log(classifier.classify('Can you play some stuff?')); // -> music
 ```
 
+## Restoring and saving
+
+The trained classifier can be saved to a JSON file like this:
+
+```js
+classifier.save('test/brain_classifier.json', function () {});
+```
+
+And restored from the file like this:
+
+```js
+BrainJSClassifier.load('test/brain_classifier.json', null, null,
+  function (err, newClassifier) {
+    if (err) {
+      return done(err);
+    }
+  }
+)
+```
+
 ## License
 
 Copyright (c) 2018
