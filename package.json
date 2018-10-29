@@ -30,9 +30,8 @@
     "changelog": "github_changelog_generator && git add CHANGELOG.md && git commit -am \"Updating changelog\"",
     "jshint": "jshint src/. test/. --config",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha -- --opts mocha.opts",
-    "mocha": "mocha --recursive test/ --compilers js:babel-core/register",
+    "mocha": "mocha --opts mocha.ops",
     "test": "npm run lint && npm run coverage",
-    "start": "npm run compile && node example/app",
     "lint": "semistandard --fix"
   },
   "directories": {
@@ -42,7 +41,7 @@
     "brain.js": "^1.4.2",
     "debug": "^4.1.0",
     "lodash.maxby": "^4.6.0",
-    "natural": "^0.6.1"
+    "natural": "^0.6.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
