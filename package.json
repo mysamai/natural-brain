@@ -38,7 +38,7 @@
     "lib": "lib"
   },
   "dependencies": {
-    "brain.js": "^1.5.1",
+    "brain.js": "^1.6.1",
     "debug": "^4.1.0",
     "lodash.maxby": "^4.6.0",
     "natural": "^0.6.2"
