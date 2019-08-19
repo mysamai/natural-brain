@@ -49,6 +49,6 @@
     "istanbul": "^1.1.0-alpha.1",
     "jshint": "^2.9.6",
     "mocha": "^6.0.0",
-    "semistandard": "^13.0.1"
+    "semistandard": "^14.0.1"
   }
 }
